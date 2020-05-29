@@ -72,6 +72,7 @@ if($portfolio_layout_options == 'slider') {
                 <?php
                     $container = '<div class="elstn-portfolio-banner"%s>%s</div>';
                     if( function_exists( 'cvwp_has_video' ) && cvwp_has_video() ){
+                        add_filter( 'cvwp_allow_video_embed', '__return_false' );
                         $container = sprintf(
                             $container,
                             'style="height:auto;"',
